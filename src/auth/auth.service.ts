@@ -28,7 +28,7 @@ export class AuthService {
     try {
       const { username, password } = authCredentialsDto;
 
-      const user = await this.usersRepository.findOne({
+      const user: User = await this.usersRepository.findOne({
         where: {
           username,
         },
