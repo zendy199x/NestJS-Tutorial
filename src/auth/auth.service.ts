@@ -1,4 +1,4 @@
-import { AuthCredentialsDto } from 'src/auth/dto/auth-credentials.dto';
+import { AuthCredentialsDto } from '../auth/dto/auth-credentials.dto';
 import { UsersRepository } from './users.repository';
 import {
   BadRequestException,
