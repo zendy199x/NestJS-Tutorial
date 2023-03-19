@@ -7,6 +7,7 @@ import { UsersRepository } from './users.repository';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt.strategy';
+import { LocalStrategy } from './local.strategy';
 
 @Module({
   imports: [
@@ -21,8 +22,8 @@ import { JwtStrategy } from './jwt.strategy';
     }),
     TypeOrmModule.forFeature([User]),
   ],
-  providers: [AuthService, JwtStrategy, UsersRepository],
+  providers: [AuthService, LocalStrategy, JwtStrategy, UsersRepository],
   controllers: [AuthController],
-  exports: [JwtStrategy, PassportModule],
+  exports: [LocalStrategy, JwtStrategy, PassportModule],
 })
 export class AuthModule {}

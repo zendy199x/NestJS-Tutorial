@@ -47,7 +47,7 @@ export class AuthService {
 
       user.password = undefined;
 
-      return { profile: user, accessToken };
+      return { accessToken };
     } catch (error) {
       throw new UnauthorizedException('Please check your login credentials');
     }
